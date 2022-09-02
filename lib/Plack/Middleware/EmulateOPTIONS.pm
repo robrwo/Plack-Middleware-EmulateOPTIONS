@@ -11,7 +11,7 @@ use parent 'Plack::Middleware';
 
 use Plack::Util;
 use Plack::Util::Accessor qw/ filter /;
-use HTTP::Status          qw/ HTTP_OK /;
+use HTTP::Status          qw/ is_success /;
 use Try::Tiny;
 
 our $VERSION = 'v0.1.0';
@@ -29,7 +29,7 @@ sub call {
             $res,
             sub {
                 my ($res) = @_;
-                if ( $res->[0] == HTTP_OK ) {
+                if ( is_success($res->[0]) ) {
                     Plack::Util::header_set( $res->[1], 'allow', "GET, HEAD, OPTIONS" );
                 }
                 return;
