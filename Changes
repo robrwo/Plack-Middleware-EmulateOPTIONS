@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Other]
+  - Signed distribution.
 
 v0.1.0    2022-09-02 13:24:12+01:00 Europe/London
- - Initial version.
+  - Initial version.
