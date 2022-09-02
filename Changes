@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.2.0    2022-09-02 16:51:02+01:00 Europe/London
   [Enhancements]
   - Added callback option to modify the response based on the request.
 
