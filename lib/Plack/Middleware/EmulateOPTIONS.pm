@@ -12,7 +12,6 @@ use parent 'Plack::Middleware';
 use Plack::Util;
 use Plack::Util::Accessor qw/ filter /;
 use HTTP::Status          qw/ is_success /;
-use Try::Tiny;
 
 our $VERSION = 'v0.1.0';
 
