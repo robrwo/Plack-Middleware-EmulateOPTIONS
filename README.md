@@ -4,7 +4,7 @@ Plack::Middleware::EmulateOPTIONS - handle OPTIONS requests as HEAD
 
 # VERSION
 
-version v0.1.1
+version v0.2.0
 
 # SYNOPSIS
 
@@ -28,7 +28,7 @@ builder {
 
 This middleware adds support for handling HTTP `OPTIONS` requests, by internally rewriting them as `HEAD` requests.
 
-If the requests succeed, then it will add `Allow` headers set to `GET, HEAD, OPTIONS` to the responses.
+If the requests succeed, then it will add `Allow` headers using the ["callback"](#callback) method.
 
 If the requests do not succeed, then the responses are passed unchanged.
 
@@ -41,9 +41,38 @@ You can add the ["filter"](#filter) attribute to determine whether it will proxy
 This is an optional code reference for a function that takes the [PSGI](https://metacpan.org/pod/PSGI) environment and returns true or false as to
 whether the request should be proxied.
 
-For instance, if you have CORS handler for a specific path, you might return false for those requests.
+For instance, if you have CORS handler for a specific path, you might return false for those requests. Alternatively,
+you might use the ["callback"](#callback).
 
 If you need a different value for the `Allow` headers, then you should handle the requests separately.
+
+## callback
+
+This is an optional code reference that modifies the response headers.
+
+By default, it sets the `Allow` header to "GET, HEAD, OPTIONS".
+
+If you override this, then you will need to manually set the header yourself, for example:
+
+```perl
+use Plack::Util;
+
+enable "EmulateOPTIONS",
+  callback => sub {
+      my $res = shift;
+      my $env = shift;
+
+      my @allowed = qw( GET HEAD OPTIONS );
+      if ( $env->{PATH_INFO} =~ m[^/api/] ) {
+         push @allowed, qw( POST PUT DELETE );
+      }
+
+      Plack::Util::header_set( $res->[1], 'allow', join(", ", @allowed) );
+
+    };
+```
+
+This was added in v0.2.0.
 
 # SEE ALSO
 
