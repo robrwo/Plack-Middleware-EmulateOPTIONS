@@ -16,6 +16,43 @@ use Try::Tiny;
 
 our $VERSION = 'v0.1.0';
 
+=head1 SYNOPSIS
+
+  use Plack::Builder;
+
+  builder {
+
+    enable "EmulateOPTIONS",
+      filter => sub {
+          my $env = shift;
+          return $env->{PATH_INFO} =~ m[^/static/];
+        };
+
+    ...
+
+  };
+
+=head1 DESCRIPTION
+
+This middleware adds support for handling HTTP C<OPTIONS> requests, by internally rewriting them as C<HEAD> requests.
+
+If the requests succeed, then it will add C<Allow> headers set to C<GET, HEAD, OPTIONS> to the responses.
+
+If the requests do not succeed, then the responses are passed unchanged.
+
+You can add the L</filter> attribute to determine whether it will proxy C<HEAD> requests.
+
+=attr filter
+
+This is an optional code reference for a function that takes the L<PSGI> environment and returns true or false as to
+whether the request should be proxied.
+
+For instance, if you have CORS handler for a specific path, you might return false for those requests.
+
+If you need a different value for the C<Allow> headers, then you should handle the requests separately.
+
+=cut
+
 sub call {
     my ( $self, $env ) = @_;
 
@@ -43,5 +80,13 @@ sub call {
 
     }
 }
+
+=head1 SEE ALSO
+
+L<Plack>
+
+L<PSGI>
+
+=cut
 
 1;
