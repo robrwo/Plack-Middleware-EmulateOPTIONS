@@ -11,7 +11,7 @@ use parent 'Plack::Middleware';
 
 use Plack::Util;
 use Plack::Util::Accessor qw/ filter callback /;
-use HTTP::Status          qw/ is_success /;
+use HTTP::Status ();
 
 our $VERSION = 'v0.2.0';
 
@@ -106,7 +106,7 @@ sub call {
             $res,
             sub {
                 my ($res) = @_;
-                if ( is_success($res->[0]) ) {
+                if ( HTTP::Status::is_success($res->[0]) ) {
                     $callback->( $res, $env );
                 }
             }
