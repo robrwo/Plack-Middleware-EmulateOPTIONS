@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Adjusted minimum version of HTTP::Request::Common used for testing.
 
 v0.2.1    2022-09-05 13:59:49+01:00 Europe/London
   [Tests]
