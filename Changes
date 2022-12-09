@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Tests]
   - Adjusted minimum version of HTTP::Request::Common used for testing.
 
+  - Removed unused Test::Vars dependency.
+
   [Other]
   - Added GitHub Actions to run tests.
 
