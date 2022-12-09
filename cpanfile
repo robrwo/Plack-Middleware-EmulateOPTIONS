@@ -18,7 +18,7 @@ on 'test' => sub {
   requires "Plack::Response" => "0";
   requires "Plack::Test" => "0";
   requires "Test::Differences" => "0";
-  requires "Test::More" => "0";
+  requires "Test::More" => "1.302008";
 };
 
 on 'test' => sub {
@@ -35,7 +35,7 @@ on 'develop' => sub {
   requires "Test::EOL" => "0";
   requires "Test::Kwalitee" => "1.21";
   requires "Test::MinimumVersion" => "0";
-  requires "Test::More" => "1.302008";
+  requires "Test::More" => "0.88";
   requires "Test::NoTabs" => "0";
   requires "Test::Perl::Critic" => "0";
   requires "Test::Pod" => "1.41";
