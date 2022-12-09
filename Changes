@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Tests]
   - Adjusted minimum version of HTTP::Request::Common used for testing.
 
+  - Set minimum version of Test::More.
+
   - Removed unused Test::Vars dependency.
 
   [Other]
