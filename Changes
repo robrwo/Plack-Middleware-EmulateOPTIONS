@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Tests]
   - Adjusted minimum version of HTTP::Request::Common used for testing.
 
+  [Other]
+  - Added GitHub Actions to run tests.
+
 v0.2.1    2022-09-05 13:59:49+01:00 Europe/London
   [Tests]
   - Add minimum version of HTTP::Request::Common used for testing.
