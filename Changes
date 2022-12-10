@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Incompatible Changes]
+  - Minimum Perl version is v5.14.
+
   [Tests]
   - Adjusted minimum version of HTTP::Request::Common used for testing.
 

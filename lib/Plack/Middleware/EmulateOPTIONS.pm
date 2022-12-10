@@ -2,9 +2,8 @@ package Plack::Middleware::EmulateOPTIONS;
 
 # ABSTRACT: handle OPTIONS requests as HEAD
 
-use v5.10;
+use v5.14;
 
-use strict;
 use warnings;
 
 use parent 'Plack::Middleware';
