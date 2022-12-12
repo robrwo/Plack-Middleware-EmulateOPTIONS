@@ -11,6 +11,9 @@ Revision history for {{ $dist->name }}:
 
   - Removed unused Test::Vars dependency.
 
+  [Documentation]
+  - Documented support for older Perl versions.
+
   [Other]
   - Added GitHub Actions to run tests.
 
