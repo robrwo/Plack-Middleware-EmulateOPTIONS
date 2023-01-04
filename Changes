@@ -12,6 +12,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Documented support for older Perl versions.
 
+  - Minor reformatting.
+
   [Other]
   - Added GitHub Actions to run tests.
 
