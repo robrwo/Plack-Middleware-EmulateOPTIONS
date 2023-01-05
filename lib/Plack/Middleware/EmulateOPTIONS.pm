@@ -12,7 +12,7 @@ use Plack::Util;
 use Plack::Util::Accessor qw/ filter callback /;
 use HTTP::Status ();
 
-our $VERSION = 'v0.3.0';
+our $VERSION = 'v0.3.1';
 
 =head1 SYNOPSIS
 
