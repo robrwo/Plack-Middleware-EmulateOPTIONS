@@ -4,7 +4,7 @@ Plack::Middleware::EmulateOPTIONS - handle OPTIONS requests as HEAD
 
 # VERSION
 
-version v0.3.1
+version v0.3.2
 
 # SYNOPSIS
 
