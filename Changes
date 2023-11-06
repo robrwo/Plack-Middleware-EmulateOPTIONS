@@ -7,6 +7,8 @@ Revision history for {{ $dist->name }}:
   [Tests]
   - Migrated to Test2.
 
+  - Switched package used for the release manifest.
+
 v0.3.1    2023-01-10 10:57:23+00:00 Europe/London
   No Changes since v0.3.0
 
