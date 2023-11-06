@@ -16,8 +16,9 @@ on 'test' => sub {
   requires "Plack::Middleware::Static" => "0";
   requires "Plack::Response" => "0";
   requires "Plack::Test" => "0";
+  requires "Test2::V0" => "0";
   requires "Test::Differences" => "0";
-  requires "Test::More" => "1.302008";
+  requires "Test::More" => "1.302176";
   requires "strict" => "0";
 };
 
