@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.3.2    2023-11-07 13:00:11+00:00 Europe/London
   [Documentation]
   - Removed unnecessary SEE ALSO section.
 
