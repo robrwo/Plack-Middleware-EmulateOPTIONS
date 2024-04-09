@@ -9,10 +9,10 @@ use warnings;
 use parent 'Plack::Middleware';
 
 use Plack::Util;
-use Plack::Util::Accessor qw/ filter callback /;
-use HTTP::Status ();
+use Plack::Util::Accessor qw( filter callback );
+use HTTP::Status          ();
 
-use experimental qw/ postderef signatures /;
+use experimental qw( postderef signatures );
 
 our $VERSION = 'v0.4.0';
 
@@ -80,18 +80,20 @@ This was added in v0.2.0.
 
 sub prepare_app($self) {
 
-    unless (defined $self->callback) {
+    unless ( defined $self->callback ) {
 
-        $self->callback( sub($res, $env) {
-            Plack::Util::header_set( $res->[1], 'allow', "GET, HEAD, OPTIONS" );
-        });
+        $self->callback(
+            sub( $res, $env ) {
+                Plack::Util::header_set( $res->[1], 'allow', "GET, HEAD, OPTIONS" );
+            }
+        );
 
     }
 }
 
-sub call($self, $env) {
+sub call( $self, $env ) {
 
-    my $filter = $self->filter;
+    my $filter   = $self->filter;
     my $callback = $self->callback;
 
     if ( $env->{REQUEST_METHOD} eq "OPTIONS" && ( !$filter || $filter->($env) ) ) {
@@ -102,7 +104,7 @@ sub call($self, $env) {
             $res,
             sub {
                 my ($res) = @_;
-                if ( HTTP::Status::is_success($res->[0]) ) {
+                if ( HTTP::Status::is_success( $res->[0] ) ) {
                     $callback->( $res, $env );
                 }
             }
