@@ -76,7 +76,7 @@ This was added in v0.2.0.
 
 Since v0.4.0, the this module requires Perl v5.20 or later.
 
-Future releases may only support Perl versions released in the last ten years.
+Future releases may only support Perl versions released in the last ten (10) years.
 
 # SOURCE
 
