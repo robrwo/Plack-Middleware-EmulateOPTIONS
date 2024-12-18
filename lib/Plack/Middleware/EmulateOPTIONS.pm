@@ -124,6 +124,13 @@ Since v0.4.0, the this module requires Perl v5.20 or later.
 
 Future releases may only support Perl versions released in the last ten (10) years.
 
+=head1 append:BUGS
+
+=head2 Reporting Security Vulnerabilities
+
+Security issues should not be reported on the bugtracker website. Please see F<SECURITY.md> for instructions how to
+report security vulnerabilities
+
 =cut
 
 1;
